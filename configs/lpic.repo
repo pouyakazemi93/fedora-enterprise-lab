@@ -1,0 +1,9 @@
+[lpic-local]
+name=LPIC Local Repository
+baseurl=file:///repo/lpic
+enabled=1
+gpgcheck=0
+
+
+
+

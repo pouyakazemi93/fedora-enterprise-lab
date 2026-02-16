@@ -1,0 +1,490 @@
+    1  fdisk -l
+    2  fdisk /dev/sda
+    3  fdisk /dev/sdb
+    4  fdisk -l
+    5  pvcreate /dev/sda1 /dev/sda2 /dev/sda4 /dev/sda5 /dev/sda6
+    6  pvcreate /dev/sdb1 /dev/sdb2 /dev/sdb3
+    7  pvs
+    8  vgcreate vg1 /dev/sda1 /dev/sda2 /dev/sd6 /dev/sdb1 /dev/sdb2 /dev/sdb3
+    9  vgcreate vg1 /dev/sda1 /dev/sda2 /dev/sda6 /dev/sdb1 /dev/sdb2 /dev/sdb3
+   10  vgs
+   11  lvcreate -n LV1 -L 29G
+   12  lvcreate -n LV1 -L 29G vg1 
+   13  lvcreate -n LV2 -L 5G vg1 
+   14  lvs
+   15  mkfs -t ext3 /dev/mapper/vg1-LV1 
+   16  mkfs -t ext3 /dev/mapper/vg1-LV2 
+   17  cd /home/pouya/
+   18  ls
+   19  mkdir LV1
+   20  mkdir LV2
+   21  ls
+   22  mount /dev/mapper/vg1-LV1 /home/pouya/LV1
+   23  mount /dev/mapper/vg1-LV2 /home/pouya/LV2
+   24  nano /etc/fstab
+   25  mount --help 
+   26  fdisk -l
+   27  nano /etc/fstab
+   28  mount -a
+   29  systemctl daemon-reload 
+   30  mount -a
+   31  shutdown -r now
+   32  fdisk -l
+   33  tree
+   34  clear
+   35  /home/pouya/
+   36  cd /home/pouya/
+   37  touch file1
+   38  dd if=/dev/zero of=/home/pouya/file1 bs=1024 count=102400
+   39  nano file1 
+   40  mkswap /home/pouya/file1 
+   41  swapon
+   42  swap -a
+   43  swapon 
+   44  free 
+   45  swapon /home/pouya/file1
+   46  dd if=/dev/zero of=/home/pouya/file1 bs=1024 count=1024000
+   47  swapon /home/pouya/file1
+   48  mkswap /home/pouya/file1 
+   49  chmod 0600 file1 
+   50  mkswap /home/pouya/file1 
+   51  swapon /home/pouya/file1
+   52  swapon -s
+   53  cd /root/
+   54  ls
+   55  touch swapfile
+   56  dd if=/dev/zero of=/root/swapfile bs=1024 count=1024000
+   57  mkswap /root/swapfile 
+   58  chmod 0600 swapfile 
+   59  mkswap /root/swapfile 
+   60  swapon /root/swapfile
+   61  swapon -s
+   62  chmod 666 /root/swapfile 
+   63  ls -l
+   64  mkswap /root/swapfile 
+   65  swapon /root/swapfile
+   66  chmod 600 /root/swapfile 
+   67  swapon /root/swapfile
+   68  mkswap /root/swapfile 
+   69  swapon /root/swapfile
+   70  rm -rf swapfile 
+   71  touch swap
+   72  dd if=/dev/zero of=/root/swap bs=1M count=2048 status=progress \
+   73  chmod 600 swap 
+   74  mkswap /root/swapfile 
+   75  mkswap /root/swap
+   76  swapon /root/swap
+   77  swapon /root/swap\
+   78  swapon -s
+   79  swapon /root/swap
+   80  mkswap /root/swap
+   81  sudo mkswap swap 
+   82  ls -ls
+   83  file swap 
+   84  swapon -v swap
+   85  findmnt -no FSTYPE /
+   86  swapoff -a
+   87  rm -rf swap 
+   88  clear
+   89  btrfs filesystem mkswapfile --size 2G /root/swap
+   90  ls
+   91  swapon /root/swap
+   92  swapon -s
+   93  free 
+   94  nano /etc/fstab
+   95  swap -a
+   96  swapon -s
+   97  df -h
+   98  adduser Ali 
+   99  passwd Ali 1234
+  100  less /etc/passwd
+  101  passwd Ali --help 
+  102  usermod Ali --help 
+  103  usermod Ali -p 1234
+  104  useradd hamid -p 1234
+  105  passwd Ali 1234
+  106  less /etc/passwd
+  107  clear
+  108  groupadd IT --help 
+  109  groupadd IT -g 5000
+  110  groupadd SALES -g 5001
+  111  usermod -g 5000 Ali 
+  112  tac /etc/passwd
+  113  usermod hamid -g 5001 
+  114  cat /etc/passwd
+  115  pwd
+  116  mkdir MYUSERS
+  117  cd MYUSERS/
+  118  mkdir SALES IT
+  119  ls
+  120  chmod IT --help 
+  121  chown IT:IT IT 
+  122  cat /etc/passwd
+  123  chown Ali:IT IT 
+  124  chown hamid:SALES SALES 
+  125  ls -ln
+  126  chmod 700 IT/
+  127  chmod 770 SALES/
+  128  ls -ln
+  129  useradd majid 
+  130  usermod -g IT -G SALES majid 
+  131  history 
+  132  cat /etc/passwd
+  133  usermod --help
+  134  id majid 
+  135  id po
+  136  id pouya 
+  137  usermod -g 0
+  138  usermod -g 0 pouya 
+  139  cat /etc/passwd
+  140  usermod -u 0 pouya 
+  141  usermod -u 10 pouya 
+  142  cat /etc/passwd
+  143  usermod --help 
+  144  fdisk -l
+  145  pvs
+  146  VGS
+  147  vgs
+  148  lvs
+  149  lvdisplay 
+  150  usermod -p 1234 root 
+  151  id Ali 
+  152  fdsik /dev/sda
+  153  fdisk /dev/sda
+  154  fdisk /dev/sdb
+  155  clear
+  156  fdisk -l
+  157  clear
+  158  ls
+  159  ls -ln 
+  160  systemctl status sshd.service 
+  161  systemctl enable sshd.service 
+  162  systemctl start sshd.service 
+  163  systemctl status firewalld.service 
+  164  systemctl stop firewalld.service 
+  165  systemctl disable firewalld.service 
+  166  ifconfig 
+  167  netstat 
+  168  ifconfig 
+  169  clear
+  170  systemctl status sshd.service 
+  171  su pouya 
+  172  dnf install vsftpd
+  173  systemctl status vsftpd.service 
+  174  systemctl start vsftpd.service 
+  175  systemctl enable vsftpd.service 
+  176  systemctl status vsftpd.service 
+  177  cd /usr/\
+  178  where is /pub
+  179  whereis /pub
+  180  whereis pub
+  181  cd ..
+  182  cd /var/ftp/pub/
+  183  touch file1 \
+  184  nano file1 
+  185  ifconfig 
+  186  ls -ln
+  187  rm -rf 'file1\' 
+  188  ls -ln
+  189  setsebool -P ftpd_full_access on~
+  190  setsebool -P ftpd_full_access on
+  191  restorecon -Rv /var/ftp
+  192  nano /etc/vsftpd/vsftpd.conf 
+  193  nano /etc/passwd
+  194  usermod --help 
+  195  usermod -p 1234 pouya
+  196  su pouya 
+  197  passwd Ali 1234
+  198  passwd pouya 
+  199  su
+  200  su Ali
+  201  su Ali 
+  202  clear
+  203  cd /var/ftp/pub/
+  204  ls
+  205  mv file1 /home/majid/
+  206  ls
+  207  clear
+  208  passwd majid 
+  209  nano /etc/vsftpd/vsftpd.conf 
+  210  systemctl status vsftpd.service 
+  211  systemctl restart vsftpd.service 
+  212  clear
+  213  cd /home/majid/
+  214  ls
+  215  mv file1 file1.txt
+  216  ls
+  217  nano /var/www/html/index.html 
+  218  ls
+  219  nano file1.txt 
+  220  clear
+  221  shutdown - now
+  222  shutdown -h now
+  223  ping 8.8.8.8
+  224  cd /
+  225  cd /root/Downloads/
+  226  ls
+  227  tar xvf htop-3.4.1.tar.xz 
+  228  cd htop-3.4.1/
+  229  ls
+  230  ./configure 
+  231  dnf install gcc
+  232  ./configure 
+  233  dnf install ncurses
+  234  dnf install ncurses-devel
+  235  ./configure 
+  236  make
+  237  make install
+  238  ls
+  239  wget https://download1.rpmfusion.org/free/fedora/releases/40/Everything/x86_64/os/Packages/n/neofetch-7.1.0-1.fc40.noarch.rpm
+  240  cd ..
+  241  ls
+  242  cd ..
+  243  ls
+  244  wget https://download1.rpmfusion.org/free/fedora/releases/43/Everything/x86_64/os/Packages/n/neofetch-7.1.0-1.fc40.noarch.rpm
+  245  wget https://fedora.pkgs.org/43/fedora-updates-x86_64/btop-1.4.4-2.fc43.x86_64.rpm
+  246  wget https://dl.fedoraproject.org/pub/fedora/linux/updates/43/Everything/source/tree/Packages/b/btop-1.4.4-2.fc43.src.rpm
+  247  cd /root/Downloads/
+  248  ls
+  249  cd ..
+  250  whereis btop
+  251  cd /root/Downloads/
+  252  ls
+  253  rpm -ivh btop-1.4.4-2.fc43.src.rpm 
+  254  ls
+  255  rpm -ivh btop-1.4.4-2.fc43.src.rpm 
+  256  ls 
+  257  cd /usr/bin/btop
+  258  rpm -fvh btop-1.4.4-2.fc43.src.rpm 
+  259  btop
+  260  rpm -e btop
+  261  ls
+  262  ckear
+  263  clear
+  264  rm -rf btop-1.4.4-2.fc43.src.rpm 
+  265  ls
+  266  rpm -ivh btop-1.4.4-2.fc43.x86_64.rpm 
+  267  btop 
+  268  shutdown -h now
+  269  ifconfig 
+  270  cd /etc/sysconfig
+  271  ls
+  272  cd network
+  273  cat network 
+  274  /etc/NetworkManager/system-connections/
+  275  ls
+  276  /etc/NetworkManager/system
+  277  /etc/NetworkManager/
+  278  cd /etc/NetworkManager/system-connections/
+  279  l
+  280  cd /etc/NetworkManager/
+  281  ls
+  282  nmcli con show
+  283  cd system-connections/
+  284  LS
+  285  ls
+  286  sls
+  287  nmtui
+  288  clear
+  289  nmcli con show
+  290  nmcli
+  291  nmcli connection show
+  292  ls
+  293  cat Wired connection\
+  294  cat Wired connection 1
+  295  clear
+  296  sudo ls -Z /etc/NetworkManager/system-connections/
+  297  ls
+  298  claer
+  299  cl;ear
+  300  clear
+  301  cd ..
+  302  ls
+  303  shutdown -h now
+  304  clear
+  305  nmcli con show
+  306  nmcli connection modify Wired\ connection\ 2 +ipv4.addresses 192.168.1.10/24
+  307  nmcli connection modify Wired\ connection\ 2 +ipv4.addresses 192.168.2.10/24
+  308  ifconfig 
+  309  nmcli connection up Wired\ connection\ 2
+  310  ifconfig 
+  311  ping 8.8.8.8
+  312  clear
+  313  ip a
+  314  clear
+  315  mkdir /var/www/customer1
+  316  mkdir /var/www/customer2
+  317  chown -R apache:apache /var/www/customer1 /var/www/customer2
+  318  chmod -R 755 /var/www
+  319  cd /var/www/customer1
+  320  touch index.html
+  321  nano index.html 
+  322  cd ..
+  323  cd customer2
+  324  nano index.html 
+  325  nano /etc/httpd/conf.d/customer1.conf
+  326  nano /etc/httpd/conf.d/customer2.conf
+  327  apachectl --help
+  328  apachectl configtest
+  329  systemctl restart httpd
+  330  systemctl restart httpd.service 
+  331  shutdown -r now
+  332  ifconfig 
+  333  cd /
+  334  cd /etc/sysconfig/
+  335  ls
+  336  cd ..
+  337  ls
+  338  clear
+  339  ls
+  340  cd NetworkManager/system-connections/
+  341  ls
+  342  clear
+  343  cd ...
+  344  cd ..
+  345  clear
+  346  nmcli help 
+  347  10
+  348  clear
+  349  ps aux
+  350  shutdown -h now
+  351  cat /etc/httpd/conf.d/customer1.conf 
+  352  cat /etc/httpd/conf.d/customer2.conf 
+  353  ip a
+  354  clear
+  355  curl http://192.168.1.10
+  356  curl http://192.168.2.10
+  357  cd /etc/dnsmasq.d/
+  358  ls
+  359  claer
+  360  clear
+  361  nano /etc/hosts
+  362  cat /etc/hosts 
+  363  ping customer1.local
+  364  ping customer2.local
+  365  clear
+  366  ps aux
+  367  nice -n -15 firefox 
+  368  clear
+  369  nice -n -15 btop 
+  370  clear
+  371  top
+  372  clear
+  373  dnf install createrepo_c -y 
+  374  mkdir -p /repo/lpic
+  375  cd /root/Downloads/
+  376  ls
+  377  cp tmux-3.5a-5.fc43.x86_64.rpm /repo/lpic
+  378  cp mc-4.8.33-2.fc43.aarch64.rpm /repo/lpic
+  379  ls
+  380  clear
+  381  ls /repo/lpic/
+  382  createrepo /repo/lpic/
+  383  nano /etc/yum.repos.d/lpic.repo
+  384  dnf install mc 
+  385  clear
+  386  cd /etc/yum.repos.d/
+  387  ls
+  388  nano fedora.repo 
+  389  dnf install mc 
+  390  dnf install mc lpic.repo
+  391  dnf repolist 
+  392  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  393  sudo dnf install tmui --disablerepo="*" --enablerepo=lpic-local
+  394  cd /root/Downloads/
+  395  ls
+  396  rm -rf mc-4.8.33-2.fc43.aarch64.rpm tmux-3.5a-5.fc43.x86_64.rpm 
+  397  ls
+  398  cp tmux-3.5a-5.fc43.aarch64.rpm /repo/lpic/
+  399  cd /repo/lpic/
+  400  ls
+  401  sudo dnf install tmux --disablerepo="*" --enablerepo=lpic-local
+  402  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  403  cp /root/Downloads/mc-4.8.33-2.fc43.x86_64.rpm /repo/lpic/
+  404  ls
+  405  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  406  uname -m
+  407  rm -rf mc-4.8.33-2.fc43.aarch64.rpm 
+  408  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  409  createrepo --update /repo/lpic/
+  410  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  411  ls
+  412  dnf clean all
+  413  dnf makecache 
+  414  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  415  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local --skip-broken 
+  416  ls
+  417  clear
+  418  dnf makecache 
+  419  clear
+  420  cd /etc/yum.repos.d/
+  421  nano fedora-cisco-openh264.repo 
+  422  dnf clean all
+  423  dnf makecache 
+  424  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local --skip-broken 
+  425  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  426  cd /repo/lpic/
+  427  rm -rf *
+  428  ls
+  429  cp /root/Downloads/mc-4.8.33-2.fc43.x86_64.rpm /repo/lpic/
+  430  ls
+  431  clear
+  432  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  433  sudo createrepo --update /repo/lpic
+  434  dnf clean all
+  435  dnf makecache 
+  436  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  437  cp /root/Downloads/gpm-1.20.7-52.fc43.x86_64.rpm /repo/lpic/
+  438  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  439  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  440  ls
+  441  dnf clean all
+  442  dnf makecache 
+  443  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  444  cd /root/Downloads/
+  445  rpm -ivf gpm-libs-1.20.7-52.fc43.x86_64.rpm 
+  446  ls
+  447  rpm -ivh gpm-libs-1.20.7-52.fc43.x86_64.rpm 
+  448  ls
+  449  sudo dnf install mc --disablerepo="*" --enablerepo=lpic-local
+  450  mc
+  451  clear
+  452  cd /etc/
+  453  cd /
+  454  cd ..
+  455  cd home/
+  456  ls
+  457  cd /
+  458  cd root/Desktop/
+  459  ls
+  460  l
+  461  mkdir fedora-interprise-lab
+  462  ls
+  463  cd fedora-interprise-lab/
+  464  mkdir config scripts docs screenshot
+  465  ls
+  466  nano /etc/httpd/conf/httpd.conf 
+  467  nano /etc/httpd/conf.d/customer1.conf 
+  468  cp /etc/httpd/conf/httpd.conf config/
+  469  mv config configs
+  470  ls
+  471  cd configs/
+  472  ls
+  473  cd ..
+  474  cp /etc/httpd/conf/*.conf
+  475  cp /etc/httpd/conf.d/*.conf
+  476  cp /etc/httpd/conf.d/*.conf configs/
+  477  cd configs/
+  478  ls
+  479  nano /etc/vsftpd/vsftpd.conf 
+  480  cp /etc/vsftpd/vsftpd.conf 
+  481  cd ..
+  482  cp /etc/vsftpd/vsftpd.conf configs/
+  483  ls
+  484  nano /etc/yum.repos.d/lpic.repo 
+  485  cp /etc/yum.repos.d/lpic.repo configs/
+  486  nano /etc/ssh/sshd_config
+  487  cp /etc/ssh/sshd_config configs/
+  488  rpm -qa > docs/installed-package.txt
+  489  nano docs/installed-package.txt 
+  490  history > docs/command-file.txt

@@ -1,0 +1,42 @@
+NAME        MAJ:MIN RM SIZE RO TYPE MOUNTPOINTS
+sda           8:0    0  20G  0 disk 
+├─sda1        8:1    0   3G  0 part 
+│ └─vg1-LV2 252:1    0   5G  0 lvm  
+├─sda2        8:2    0   2G  0 part 
+│ └─vg1-LV2 252:1    0   5G  0 lvm  
+├─sda3        8:3    0   1K  0 part 
+├─sda5        8:5    0   5G  0 part 
+└─sda6        8:6    0  10G  0 part 
+  └─vg1-LV1 252:0    0  29G  0 lvm  /home/pouya/LV2
+                                    /home/pouya/LV1
+sdb           8:16   0  20G  0 disk 
+├─sdb1        8:17   0  10G  0 part 
+│ └─vg1-LV1 252:0    0  29G  0 lvm  /home/pouya/LV2
+│                                   /home/pouya/LV1
+├─sdb2        8:18   0   5G  0 part 
+│ └─vg1-LV1 252:0    0  29G  0 lvm  /home/pouya/LV2
+│                                   /home/pouya/LV1
+└─sdb3        8:19   0   5G  0 part 
+  ├─vg1-LV1 252:0    0  29G  0 lvm  /home/pouya/LV2
+  │                                 /home/pouya/LV1
+  └─vg1-LV2 252:1    0   5G  0 lvm  
+sr0          11:0    1   3G  0 rom  
+zram0       251:0    0   8G  0 disk [SWAP]
+nvme0n1     259:0    0  20G  0 disk 
+├─nvme0n1p1 259:1    0   1M  0 part 
+├─nvme0n1p2 259:2    0   2G  0 part /boot
+└─nvme0n1p3 259:3    0  18G  0 part /home
+                                    /
+  LV   VG  Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  LV1  vg1 -wi-ao---- 29.00g                                                    
+  LV2  vg1 -wi-a-----  5.00g                                                    
+  VG  #PV #LV #SN Attr   VSize   VFree   
+  vg1   6   2   0 wz--n- <34.98g 1000.00m
+  PV         VG  Fmt  Attr PSize   PFree   
+  /dev/sda1  vg1 lvm2 a--   <3.00g       0 
+  /dev/sda2  vg1 lvm2 a--   <2.00g       0 
+  /dev/sda5      lvm2 ---    5.00g    5.00g
+  /dev/sda6  vg1 lvm2 a--  <10.00g       0 
+  /dev/sdb1  vg1 lvm2 a--  <10.00g       0 
+  /dev/sdb2  vg1 lvm2 a--   <5.00g       0 
+  /dev/sdb3  vg1 lvm2 a--   <5.00g 1000.00m
