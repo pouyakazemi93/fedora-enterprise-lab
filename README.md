@@ -1,4 +1,3 @@
-
 #Fedora Enterprise Lab
 This project demonstrates real-world Linux server configuration in Virtualized enviroment.
 
